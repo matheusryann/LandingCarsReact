@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+# Mini Projeto - Página de Carro com React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um mini projeto desenvolvido com o objetivo de praticar conceitos fundamentais de desenvolvimento front-end utilizando **React**, **TypeScript** e **Vite**.
 
-Currently, two official plugins are available:
+A proposta do projeto é criar uma página simples de apresentação/descrição de um carro, aplicando conceitos de estruturação visual, organização de componentes e estilização com CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Objetivo do projeto
 
-## React Compiler
+O foco principal deste projeto é praticar:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Criação de componentes com React;
+- Uso de TypeScript em componentes;
+- Estruturação de layout com CSS Grid Layout;
+- Organização de elementos com Flexbox;
+- Aplicação da metodologia BEM na nomeação das classes CSS;
+- Organização básica de arquivos em um projeto React.
 
-## Expanding the ESLint configuration
+## Tecnologias utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- CSS
+- CSS Grid Layout
+- Flexbox
+- Metodologia BEM
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Sobre o layout
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+A página apresenta informações sobre um carro, como descrição, características e elementos visuais.  
+O layout foi pensado como exercício prático para treinar posicionamento de elementos usando **Grid** e **Flexbox**, mantendo o código CSS mais organizado por meio da metodologia **BEM**.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Metodologia BEM
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Neste projeto, as classes CSS seguem a metodologia BEM:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```css
+.bloco {}
+.bloco__elemento {}
+.bloco--modificador {}
