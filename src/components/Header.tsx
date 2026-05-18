@@ -1,19 +1,17 @@
 import './Header.css'
-import { useState } from 'react';
+import { useState, type MouseEvent } from 'react'
 
-
-type NavId = 'inicio' | 'sobre' | 'contato';
+type NavId = 'inicio' | 'sobre' | 'contato'
 
 function Header() {
-
-  const [activeLink, setActiveLink] = useState<NavId>('inicio');
+  const [activeLink, setActiveLink] = useState<NavId>('inicio')
 
   const linkClass = (id: NavId) =>
-    `site-header__link${activeLink === id ? ' site-header__link--active' : ''}`;
+    `site-header__link${activeLink === id ? ' site-header__link--active' : ''}`
 
-  function handleNavClick(id: NavId, e: React.MouseEvent<HTMLAnchorElement>) {
-    e.preventDefault();
-    setActiveLink(id);
+  const handleNavClick = (id: NavId) => (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    setActiveLink(id)
   }
 
   return (
@@ -26,22 +24,31 @@ function Header() {
           <ul>
             <li>
               <a
-                href="#"
+                href="#inicio"
                 className={linkClass('inicio')}
-                onClick={(e) => handleNavClick('inicio', e)}
                 aria-current={activeLink === 'inicio' ? 'page' : undefined}
-        
+                onClick={handleNavClick('inicio')}
               >
                 Inicio
               </a>
             </li>
             <li>
-              <a href="#" className={linkClass('sobre')} onClick={(e) => handleNavClick('sobre', e)} aria-current={activeLink === 'sobre' ? 'page' : undefined}>
+              <a
+                href="#sobre"
+                className={linkClass('sobre')}
+                aria-current={activeLink === 'sobre' ? 'page' : undefined}
+                onClick={handleNavClick('sobre')}
+              >
                 Sobre
               </a>
             </li>
             <li>
-              <a href="#" className={linkClass('contato')} onClick={(e) => handleNavClick('contato', e)} aria-current={activeLink === 'contato' ? 'page' : undefined}>
+              <a
+                href="#contato"
+                className={linkClass('contato')}
+                aria-current={activeLink === 'contato' ? 'page' : undefined}
+                onClick={handleNavClick('contato')}
+              >
                 Contato
               </a>
             </li>

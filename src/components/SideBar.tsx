@@ -1,52 +1,55 @@
-import SettingsIcon from "@mui/icons-material/Settings";
-import PowerIcon from "@mui/icons-material/Power";
-import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
-import { useState } from "react";
-import "./SideBar.css";
+import SettingsIcon from '@mui/icons-material/Settings'
+import SpeedIcon from '@mui/icons-material/Speed'
+import AirIcon from '@mui/icons-material/Air'
+import { useState } from 'react'
+import './SideBar.css'
 
 const specs = [
   {
-    id: "Engine",
-    label: "Motor",
+    id: 'Engine',
+    label: 'V6 ENGINE',
     icon: <SettingsIcon />,
   },
   {
-    id: "HP",
-    label: "200 HP",
-    icon: <PowerIcon />,
+    id: 'HP',
+    label: '200 HP',
+    icon: <SpeedIcon />,
   },
   {
-    id: "Range",
-    label: "500 km",
-    icon: <DirectionsCarIcon />,
+    id: 'CD',
+    label: '0.28 CD',
+    icon: <AirIcon />,
   },
-];
+] as const
+
+type SpecId = (typeof specs)[number]['id']
 
 export default function SideBar() {
+  const [activeSpec, setActiveSpec] = useState<SpecId>('Engine')
 
-  const [activeSpec, setActiveSpec] =
-    useState<(typeof specs)[number]["id"]>("Engine");
-
-  const itemClass = (id: (typeof specs)[number]["id"]) =>
-    `site-sidebar__item${activeSpec === id ? "site-sidebar__item--active" : ""}`;
-
-  function handleSpecClick(id: (typeof specs)[number]["id"]) {
-    setActiveSpec(id);
-  }
+  const itemClass = (id: SpecId) =>
+    `site-sidebar__item${activeSpec === id ? ' site-sidebar__item--active' : ''}`
 
   return (
-    <aside className="site-sidebar">
-      <span className="site-sidebar__brand">TECH Cars</span>
-      <ul>
+    <aside className="site-sidebar" aria-label="Especificações técnicas">
+      <span className="site-sidebar__brand">TECH SPEC</span>
+      <ul className="site-sidebar__list">
         {specs.map((spec) => (
-          <li key={spec.id} className="site-sidebar__list">
-            <button type="button" className={itemClass(spec.id)} onClick={() => handleSpecClick(spec.id)}>
-              {spec.icon} aria-current={activeSpec === spec.id ? "page" : undefined}
+          <li key={spec.id} className="site-sidebar__list-item">
+            <button
+              type="button"
+              className={itemClass(spec.id)}
+              aria-current={activeSpec === spec.id ? 'true' : undefined}
+              onClick={() => setActiveSpec(spec.id)}
+            >
+              <span className="site-sidebar__icon" aria-hidden="true">
+                {spec.icon}
+              </span>
               <span className="site-sidebar__label">{spec.label}</span>
             </button>
           </li>
         ))}
       </ul>
     </aside>
-  );
+  )
 }
