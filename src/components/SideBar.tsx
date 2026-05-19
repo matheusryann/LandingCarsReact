@@ -12,7 +12,7 @@ const specs = [
   },
   {
     id: 'HP',
-    label: '200 HP',
+    label: '340 HP',
     icon: <SpeedIcon />,
   },
   {

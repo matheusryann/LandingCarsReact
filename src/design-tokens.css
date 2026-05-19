@@ -1,0 +1,58 @@
+/* Vorsprung Aesthetic — tokens from DESIGN.md */
+:root {
+  --ds-background: #0b1326;
+  --ds-on-background: #dae2fd;
+  --ds-surface: #0b1326;
+  --ds-surface-container-lowest: #060e20;
+  --ds-surface-container-low: #131b2e;
+  --ds-surface-container: #171f33;
+  --ds-surface-container-high: #222a3d;
+  --ds-surface-container-highest: #2d3449;
+  --ds-surface-variant: #2d3449;
+  --ds-on-surface: #dae2fd;
+  --ds-on-surface-variant: #c5c6ca;
+  --ds-outline: #8f9194;
+  --ds-outline-variant: #44474a;
+
+  --ds-primary: #eef1f7;
+  --ds-on-primary: #2c3136;
+  --ds-primary-container: #d1d5db;
+  --ds-on-primary-container: #585c61;
+
+  --ds-secondary: #ffb3b6;
+  --ds-on-secondary: #68001a;
+  --ds-secondary-container: #cc003c;
+  --ds-on-secondary-container: #ffdcdc;
+
+  --ds-tertiary: #ecf1ff;
+  --ds-on-tertiary: #263143;
+  --ds-tertiary-container: #cad5ed;
+  --ds-on-tertiary-container: #515c70;
+
+  --ds-chrome-border: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--ds-primary) 55%, transparent),
+    color-mix(in srgb, var(--ds-primary) 8%, transparent)
+  );
+
+  --font-headline: 'Metropolis', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-label: 'JetBrains Mono', ui-monospace, monospace;
+
+  --ds-headline-xl-size: clamp(2rem, 4vw, 4rem);
+  --ds-headline-lg-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  --ds-body-md-size: 1rem;
+  --ds-label-size: 0.75rem;
+
+  --ds-radius-sm: 0.125rem;
+  --ds-radius-md: 0.375rem;
+  --ds-radius-lg: 0.5rem;
+  --ds-radius-xl: 0.75rem;
+
+  --ds-margin-safe: 5vw;
+  --ds-gutter: 24px;
+  --ds-col-width: calc((100% - (11 * var(--ds-gutter))) / 12);
+  --ds-section-gap: clamp(4rem, 8vw, 8rem);
+
+  --ds-blur-glass: blur(20px);
+}
