@@ -38,27 +38,45 @@ export default function Main() {
         </div>
       </article>
 
-      <aside className="car-dashboard__metrics" aria-label="Especificações rápidas">
-        <article className="car-dashboard__metric">
-          <h2 className="car-dashboard__label">Weight</h2>
-          <p className="car-dashboard__metric-value">
-            1,720 <span className="car-dashboard__metric-unit">KG</span>
-          </p>
+      <div className="car-dashboard__rail">
+        <aside className="car-dashboard__metrics" aria-label="Especificações rápidas">
+          <article className="car-dashboard__metric">
+            <h2 className="car-dashboard__label">Weight</h2>
+            <p className="car-dashboard__metric-value">
+              1,720 <span className="car-dashboard__metric-unit">KG</span>
+            </p>
+          </article>
+          <article className="car-dashboard__metric">
+            <h2 className="car-dashboard__label">Acceleration</h2>
+            <p className="car-dashboard__metric-value">
+              5.1 <span className="car-dashboard__metric-unit">SEC</span>
+            </p>
+          </article>
+        </aside>
+
+        <article className="car-dashboard__promo">
+          <img
+            className="car-dashboard__promo-media"
+            src={PROMO_IMAGE}
+            alt="Vista traseira do Audi A6"
+          />
+          <div className="car-dashboard__promo-copy">
+            <div className="car-dashboard__promo-heading">
+              <h2 className="car-dashboard__promo-title">New Book Every Week</h2>
+              <span className="car-dashboard__promo-arrow" aria-hidden="true">
+                →
+              </span>
+            </div>
+            <p className="car-dashboard__promo-subtitle">Kinfolk Performance Edition</p>
+          </div>
         </article>
-        <article className="car-dashboard__metric">
-          <h2 className="car-dashboard__label">Acceleration</h2>
-          <p className="car-dashboard__metric-value">
-            5.1 <span className="car-dashboard__metric-unit">SEC</span>
-          </p>
-        </article>
-      </aside>
+      </div>
 
       <section className="car-dashboard__engineering">
         <p className="car-dashboard__body">
-          A engenharia por trás do Audi A6 reflete décadas de refinamento
-          dinâmico. Cada curva aerodinâmica é meticulosamente testada em túneis
-          de vento para garantir que a eficiência encontre a performance bruta
-          nas estradas europeias.
+          The engineering behind the Audi A6 reflects decades of dynamic refinement.
+          Every aerodynamic curve is meticulously tested in wind tunnels to ensure
+          brutal efficiency on European roads.
         </p>
         <button type="button" className="car-dashboard__cta">
           Explore Details
@@ -77,21 +95,6 @@ export default function Main() {
             Illuminating the path with intelligent precision optics.
           </p>
         </div>
-      </article>
-
-      <article className="car-dashboard__promo">
-        <img
-          className="car-dashboard__promo-media"
-          src={PROMO_IMAGE}
-          alt="Vista traseira do Audi A6"
-        />
-        <div className="car-dashboard__promo-copy">
-          <h2 className="car-dashboard__promo-title">S line Performance</h2>
-          <p className="car-dashboard__promo-subtitle">Sport suspension package</p>
-        </div>
-        <span className="car-dashboard__promo-arrow" aria-hidden="true">
-          →
-        </span>
       </article>
 
       <article className="car-dashboard__innovation">

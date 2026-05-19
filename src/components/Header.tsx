@@ -18,7 +18,7 @@ function Header() {
     <header className="site-header">
       <div className="site-header__inner">
         <a href="/" className="site-header__brand">
-          Landing Cars
+          Audi Precision
         </a>
         <nav className="site-header__nav" aria-label="Principal">
           <ul>
