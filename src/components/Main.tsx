@@ -1,4 +1,5 @@
 import './Main.css'
+import { useEffect, useState } from 'react'
 
 const HERO_IMAGE =
   'https://lh3.googleusercontent.com/aida-public/AB6AXuCtKxnWB-9sUrhekQTDIp7Vp37jo3vLicttjWnSUuzqt0gwvNICiQ1IPtLkhhKllNfNSpfPk8py1bpkr99p82f3PPrvWTmWP1ZTb1PJJX9mdPeuT7JGxj9DAcgBvpfDdIjrODHivJJ3doGTwrTl9NUiwgOi_MXMVgUpl7rjoTwiiU35lqvlYWirsP6zVDAQF1Z2tSQa9Plkkry54mdEHizZ6Wu5601XMkgGKs2EeirIOMYnZhBWwk6U1d3-GT8jh_-ur-aLkrtc3iUY'
@@ -19,6 +20,27 @@ const ENGINEERING_NOTES = [
 ] as const
 
 export default function Main() {
+
+  const [weight, setWeight] = useState(1720);
+
+
+  useEffect(() => {
+    const final = 1720;
+    let current = 0;
+    const timer = setInterval(() => {
+      current += Math.floor(Math.random() * 10) + 1;
+
+      if (current >= final) {
+        setWeight(final);
+        clearInterval(timer);
+      } else {
+        setWeight(current);
+      }
+    }, 10);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="car-dashboard" aria-label="Audi A6 Sedan showcase">
       <article className="car-dashboard__hero">
@@ -43,7 +65,7 @@ export default function Main() {
           <article className="car-dashboard__metric">
             <h2 className="car-dashboard__label">Weight</h2>
             <p className="car-dashboard__metric-value">
-              1,720 <span className="car-dashboard__metric-unit">KG</span>
+              {weight.toLocaleString('en-US')} <span className="car-dashboard__metric-unit">KG</span>
             </p>
           </article>
           <article className="car-dashboard__metric">

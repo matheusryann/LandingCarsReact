@@ -124,6 +124,15 @@
     border-radius: 0;
     text-align: center;
     position: relative;
+    animation: metric-fade-in 0.5s ease forwards;
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.car-dashboard__metric:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px color-mix(in srgb, #000 30%, transparent);
+    border-color: color-mix(in srgb, var(--ds-primary) 20%, transparent);
+    background: color-mix(in srgb, var(--ds-surface-container-highest) 60%, transparent);
 }
 
 .car-dashboard__metric-value {
@@ -133,6 +142,7 @@
   line-height: 1;
   color: var(--ds-primary);
   margin: 0;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .car-dashboard__metric::after { 
@@ -145,6 +155,11 @@
     rotate: 180deg;
     width: 100%;
     height: 0.175rem;
+    transition: height 0.3s ease;
+}
+
+.car-dashboard__metric:hover::after {
+    height: 0.25rem;
 }
 
 .car-dashboard__metric-unit { 
@@ -154,7 +169,17 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ds-on-surface-variant);
+    transition: color 0.3s ease, transform 0.3s ease;
 }
+
+.car-dashboard__metric:hover .car-dashboard__metric-value {
+    color: var(--ds-on-background);
+    transform: scale(1.03);
+  }
+  .car-dashboard__metric:hover .car-dashboard__label {
+    color: var(--ds-secondary);
+  }
+
 
 .car-dashboard__engineering {
     display: flex;
@@ -428,4 +453,16 @@
     scale: 1.75;
     line-height: 1;
     color: var(--ds-secondary);
+  }
+
+
+  @keyframes metric-fade-in { 
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
   }
