@@ -97,7 +97,11 @@ export default function Main() {
         </div>
       </article>
 
-      <article className="car-dashboard__innovation">
+      <div className="car-dashboard__stack">
+        <article className="car-dashboard__innovation">
+        <span className="car-dashboard__innovation-watermark" aria-hidden="true">
+          TRAVESSA
+        </span>
         <div className="car-dashboard__innovation-copy">
           <p className="car-dashboard__label">Innovation Hub</p>
           <h2 className="car-dashboard__innovation-title">
@@ -110,9 +114,6 @@ export default function Main() {
             src={WHEEL_IMAGE}
             alt="Roda de liga leve Quattro em detalhe"
           />
-          <span className="car-dashboard__innovation-watermark" aria-hidden="true">
-            TRAVESSA
-          </span>
         </figure>
       </article>
 
@@ -126,6 +127,7 @@ export default function Main() {
           ))}
         </ul>
       </aside>
+      </div>
     </div>
   )
 }

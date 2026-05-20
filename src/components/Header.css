@@ -14,7 +14,8 @@
   justify-content: space-around;
   align-items: center;
   column-gap: 1.5rem;
-  max-width: 90rem;
+  width: 100%;
+  max-width: 96rem;
   margin-inline: auto;
 }
 
