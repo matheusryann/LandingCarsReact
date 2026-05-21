@@ -67,6 +67,7 @@
     display: block;
 }
 
+
 .car-dashboard__hero-copy { 
     position: absolute;
     left: 0;
@@ -100,6 +101,8 @@
     margin-bottom: 0.5rem;
 }
 
+
+
 .car-dashboard__lead { 
     font-family: var(--font-body);
     font-size: var(--ds-body-lg-size);
@@ -108,6 +111,16 @@
     color: var(--ds-on-surface-variant);
     margin-bottom: 0.5rem;
 }
+
+.car-dashboard__hero-copy .car-dashboard__label {
+    animation: hero-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  }
+  .car-dashboard__hero-copy .car-dashboard__title {
+    animation: hero-fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+  }
+  .car-dashboard__hero-copy .car-dashboard__lead {
+    animation: hero-fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+  }
 
 
 .car-dashboard__metrics { 
@@ -465,4 +478,15 @@
         opacity: 1;
         transform: translateY(0);
       }
+  }
+
+  @keyframes hero-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
   }
