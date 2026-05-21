@@ -8,7 +8,7 @@ const PROMO_IMAGE =
   'https://lh3.googleusercontent.com/aida-public/AB6AXuCtKxnWB-9sUrhekQTDIp7Vp37jo3vLicttjWnSUuzqt0gwvNICiQ1IPtLkhhKllNfNSpfPk8py1bpkr99p82f3PPrvWTmWP1ZTb1PJJX9mdPeuT7JGxj9DAcgBvpfDdIjrODHivJJ3doGTwrTl9NUiwgOi_MXMVgUpl7rjoTwiiU35lqvlYWirsP6zVDAQF1Z2tSQa9Plkkry54mdEHizZ6Wu5601XMkgGKs2EeirIOMYnZhBWwk6U1d3-GT8jh_-ur-aLkrtc3iUY'
 
 const MATRIX_LED_IMAGE =
-  'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80'
+  'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&h=600&fit=crop&q=80'
 
 const WHEEL_IMAGE =
   'https://lh3.googleusercontent.com/aida-public/AB6AXuCP0TeURjQYH9a96nNyN1bQwQm3joz4lkxKcFP3nmZlOOAQx-lXPEmQnYONwxGZQCBBKSGxxBtH9TLcJiHNxg13D2OyR2K_Xu9Uxe0kML82j_-SjUlAw6l8IbeHgnnafndMQPsPtIjFixYL343K3z7FRR7h8YcwEImw5V4e8elJ5rLuqcu9_i1W8BA1N9L3ShOE7MJKmR8vqPf9UbAz6-tFTUQ40rmbtqqMo_ThI-TFxyLR8r9HxFXaJs2kKRReB4KeiawKcgd_5AqF'
