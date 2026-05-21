@@ -59,12 +59,13 @@
     border: 1px solid color-mix(in srgb, var(--ds-primary) 12%, transparent);
 }
 
-.car-dashboard__hero-media { 
+.car-dashboard__hero-media {
     width: 100%;
     height: 100%;
     min-height: 22rem;
     object-fit: cover;
     display: block;
+    animation: hero-ken-burns 22s ease-out forwards;
 }
 
 
@@ -480,13 +481,127 @@
       }
   }
 
-  @keyframes hero-fade-up {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes hero-ken-burns {
+  from {
+    transform: scale(1);
   }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .car-dashboard__hero-media,
+  .car-dashboard__hero-copy .car-dashboard__label,
+  .car-dashboard__hero-copy .car-dashboard__title,
+  .car-dashboard__hero-copy .car-dashboard__lead {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Mobile: uma coluna, ordem de leitura natural */
+@media (max-width: 768px) {
+  .car-dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .car-dashboard__hero,
+  .car-dashboard__rail,
+  .car-dashboard__engineering,
+  .car-dashboard__feature--matrix-led,
+  .car-dashboard__stack {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .car-dashboard__hero {
+    min-height: 16rem;
+  }
+
+  .car-dashboard__hero-media {
+    min-height: 16rem;
+  }
+
+  .car-dashboard__hero-copy {
+    padding: 1.25rem 1rem;
+  }
+
+  .car-dashboard__lead {
+    font-size: var(--ds-body-md-size);
+    line-height: 1.45;
+  }
+
+  .car-dashboard__rail,
+  .car-dashboard__stack {
+    gap: 1rem;
+  }
+
+  .car-dashboard__metrics {
+    gap: 0.75rem;
+  }
+
+  .car-dashboard__metric {
+    padding: 0.875rem 0.5rem;
+  }
+
+  .car-dashboard__promo-title {
+    font-size: 1.35rem;
+  }
+
+  .car-dashboard__promo-arrow {
+    margin-left: 0.5rem;
+    scale: 1.25;
+  }
+
+  .car-dashboard__engineering {
+    padding-top: 0.25rem;
+  }
+
+  .car-dashboard__innovation {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+  }
+
+  .car-dashboard__innovation-watermark {
+    display: none;
+  }
+
+  .car-dashboard__innovation-figure {
+    min-height: 9rem;
+  }
+
+  .car-dashboard__innovation-title {
+    font-size: 1.25rem;
+  }
+
+  .car-dashboard__notes {
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-dashboard__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .car-dashboard__title {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+}
